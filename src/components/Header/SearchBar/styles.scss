@@ -1,9 +1,27 @@
-.logo {
-    color: blue
+.searchComponent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.search {}
+.searchInput {
+    border: none;
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0;
+}
 
-.navItemLineOne {}
+.searchIcon {
+    border: none;
+    background-color: #FF8E0D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
 
-.navItemLineTwo {}
+}

@@ -6,9 +6,11 @@ const Header = () => {
 
     return (
 
-        <div className={'search'}>
-            <input placeholder="Search..."></input>
-            <SearchIcon lassName={'searchIcon'} />
+        <div className='searchComponent'>
+            <input placeholder="Search FakeShop..." className="searchInput" />
+            <div className='searchIcon' >
+                <SearchIcon />
+            </div>
         </div>
     )
 }

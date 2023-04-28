@@ -5,9 +5,9 @@ const Logo = () => {
 
     return (
         <div>
-            <div className={'logo'}>
+            <div className='logo'>
                 <StorefrontIcon fontSize="large" className='logoIcon' />
-                <div className={"logoName"}>Shop</div>
+                <div className='logoName'>FakeShop</div>
             </div>
         </div>
     )

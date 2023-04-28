@@ -1,9 +1,47 @@
-.logo {
-    color: blue
+.nav {
+    display: flex;
+    margin: 0 20px;
+    white-space: pre;
+    align-items: center;
+
+    .navItem {
+        margin: 0 5px;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+
+        .navItemLineOne {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            line-height: 1.1em
+        }
+
+        .navItemLineTwo {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            line-height: 1.1em;
+        }
+    }
+
+    .navItemBasket {
+        margin: 0 5px;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+
+        .navItemLineTwo {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            line-height: 1.1em;
+            padding: 0 10px;
+        }
+    }
 }
-
-.search {}
-
-.navItemLineOne {}
-
-.navItemLineTwo {}
