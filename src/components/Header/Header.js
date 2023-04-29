@@ -6,10 +6,12 @@ import Navbar from '../Header/Navbar'
 const Header = () => {
 
     return (
-        <div className = "header">
-            <Logo />
-            <SearchBar />
-            <Navbar />
+        <div className="headerContainer">
+            <div className="header">
+                <Logo />
+                <SearchBar />
+                <Navbar />
+            </div>
         </div>
     )
 }

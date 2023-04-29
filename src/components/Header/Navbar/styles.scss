@@ -25,6 +25,7 @@
             align-items: flex-start;
             text-align: left;
             line-height: 1.1em;
+            font-weight: 800;
         }
     }
 
@@ -36,12 +37,21 @@
         justify-content: flex-start;
         text-align: left;
 
+        .navItemLineOne {
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            line-height: 1.1em;
+            color: #FF8E0D;
+        }
+
         .navItemLineTwo {
             justify-content: center;
             align-items: flex-start;
             text-align: left;
             line-height: 1.1em;
-            padding: 0 10px;
+            padding: 0 5px;
+            font-weight: 800;
         }
     }
 }

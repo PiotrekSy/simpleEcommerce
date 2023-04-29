@@ -16,7 +16,7 @@ const Header = () => {
             </div>
             <div className='navItemBasket'>
                 <ShoppingBasketIcon fontSize="large" className='navItemLineOne' />
-                <span className='navItemLineTwo'>0</span>
+                <span className='navItemLineTwo'>0,00</span>
             </div>
         </div>
     )
