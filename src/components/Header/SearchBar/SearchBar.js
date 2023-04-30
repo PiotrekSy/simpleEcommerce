@@ -1,4 +1,4 @@
-import './styles.scss';
+import './SearchBar.scss';
 
 import SearchIcon from '@mui/icons-material/Search';
 

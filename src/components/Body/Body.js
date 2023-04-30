@@ -1,12 +1,16 @@
-import './styles.scss';
-import BodyContent from './BodyContent'
+import './Body.scss';
+import ShopContent from './ShopContent';
+import Sidebar from './Sidebar';
+import Ads from './Ads';
 
 const Body = () => {
 
     return (
         <div className="shopBody">
-            <div className="container">
-                <BodyContent />
+            <div className="shopContent">
+                <Sidebar />
+                <ShopContent />
+                <Ads />
             </div>
         </div>
     )

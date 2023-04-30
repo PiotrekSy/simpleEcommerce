@@ -1,5 +1,4 @@
-
-import './styles.scss';
+import './Navbar.scss';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Header = () => {
