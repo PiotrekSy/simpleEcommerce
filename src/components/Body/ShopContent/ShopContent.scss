@@ -1,11 +1,13 @@
-.bodyContainer {
+.shopContainer {
     min-height: 300px;
     width: 70%;
     padding-top: 70px;
 
     .content {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         .itemsContainer {
             display: flex;
@@ -39,6 +41,49 @@
 
                 }
             }
+        }
+
+        .navigationContainer {
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+            padding: 50px 0;
+
+            .pagesDisplay {
+                display: flex;
+                
+                align-items: center;
+                border: 1px solid lightgrey;
+                border-radius: 2px;
+                height: 40px;
+               padding: 0 20px;
+                margin: 0.5px;
+
+                &:hover {
+                    background-color: #1d232d;
+                    color: white;
+                    cursor: pointer
+                }
+            }
+
+            .arrowButton {
+                border: none;
+                border-radius: 2px;
+                height: 40px;
+                width: 40px;
+                background-color: #FF8E0D;
+                color: white;
+                margin: 0.5px;
+                &:hover {
+                    background-color: #1d232d;
+                    color: white;
+                    cursor: pointer
+                }
+            }
+            .active {
+                color: red;
+            }
+
         }
     }
 

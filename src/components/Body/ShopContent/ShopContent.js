@@ -1,27 +1,28 @@
-import { texts } from './texts.js';
 import { useState, useEffect } from 'react'
+import ShopElement from './ShopElement';
 import './ShopContent.scss';
-import LazyLoad from 'react-lazyload';
 import CircularProgress from '@mui/material/CircularProgress';
+import {
+    firstPageHandler,
+    prevPageHandler,
+    nextPageHandler,
+    lastPageHandler,
+} from './functions.js'
 
-const BodyContent = () => {
+const ShopContent = () => {
     //data:
     const [products, setProducts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-
     //pagination: 
     const [currentPage, setCurrentPage] = useState(1);
-    const [recordsPerPage, setRecordsPerPage] = useState(10);
+    const [recordsPerPage, setRecordsPerPage] = useState(3);
+
     const lastIndex = currentPage * recordsPerPage;
     const firstIndex = lastIndex - recordsPerPage;
     const records = products.products?.slice(firstIndex, lastIndex);
-    const npage = Math.ceil(products.products?.length / recordsPerPage);
-    const numbers = npage >= 0 ? [...Array(npage + 1).keys()].slice(1) : null;
+    const nPage = Math.ceil(products.products?.length / recordsPerPage);
+    const numbers = nPage >= 0 ? [...Array(nPage + 1).keys()].slice(1) : null;
 
-    const prevPageHandler = () => currentPage > 1 ? setCurrentPage(currentPage => currentPage - 1) : null;
-    const nextPageHandler = () => currentPage < numbers.length - 1 ? setCurrentPage(currentPage => currentPage + 1) : null;
-
-    console.log(numbers)
     useEffect(() => {
         try {
             fetch("https://dummyjson.com/products")
@@ -31,44 +32,35 @@ const BodyContent = () => {
                     setIsLoaded(true);
                 });
         } catch (err) {
-            console.error(err)
+            console.error('CURRENT f******* ERROR: ' + err)
         }
     }, []);
 
-    console.log(npage)
     return (
-        <div className="bodyContainer">
-            {isLoaded ?
-                <div className="content">
-                    <div className="itemsContainer" >
-                        {records.map((item) =>
-                            <div key={item.id} images={item.images} className="productCard" category={item.category}>
-                                <div className="productImage">
-                                    <LazyLoad height={10}>
-                                        <img src={item?.thumbnail} alt={item.title} className="thumbnail" />
-                                    </LazyLoad>
-                                </div>
-                                <div className="productDescription">
-                                    <div className="pricing">
-                                        <div className="price">{texts.price} {item.price}</div>
-                                        <div className="discount"> {item.discountPercentage ? item.discountPercentage + '%' : null}</div>
-                                    </div>
-                                    <div className="name">{texts.product}{item.title}</div>
-                                    {/* <div>{texts.brand} {item.brand}</div> */}
-                                    {/* <div>{texts.category} {item.category}</div> */}
-                                    {/* <div>{texts.description} {item.description}</div> */}
-                                    <div className="bottomInfo">
-                                        <div>{texts.available} {item.stock}</div>
-                                        <div className="productRating">{texts.rating}{item.rating}</div>
-                                    </div>
-                                </div>
-                            </div>)}
-                    </div>
-                    {/* pagination navigation */}
-                    <div>
-                        
-                    </div>
+        <div className="shopContainer">
+            {isLoaded ? <div className="content">
+                <div className="itemsContainer">
+                    {records.map((item, index) =>
+                        <ShopElement key={index}
+                            id={item.id}
+                            title={item.title}
+                            price={item.price}
+                            stock={item.stock}
+                            images={item.images}
+                            rating={item.rating}
+                            category={item.category}
+                            thumbnail={item.thumbnail}
+                            discountPercentage={item.discountPercentage} />)}
                 </div>
+                {/* pagination navigation */}
+                <div className="navigationContainer">
+                    <button type="button" onClick={firstPageHandler(currentPage, setCurrentPage)} className="arrowButton">{'<<'}</button>
+                    <button type="button" onClick={prevPageHandler(currentPage, setCurrentPage)} className="arrowButton">{'<'}</button>
+                    <div className="pagesDisplay">{currentPage}{' / '}{nPage}</div>
+                    <button type="button" onClick={nextPageHandler(currentPage, setCurrentPage, numbers)} className="arrowButton">{'>'}</button>
+                    <button type="button" onClick={lastPageHandler(currentPage, setCurrentPage, numbers)} className="arrowButton">{'>>'}</button>
+                </div>
+            </div>
                 : <div className="loaderContainer">
                     <CircularProgress />
                 </div>}
@@ -76,4 +68,4 @@ const BodyContent = () => {
     )
 };
 
-export default BodyContent;
+export default ShopContent;
