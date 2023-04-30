@@ -3,61 +3,12 @@
     width: 70%;
     padding-top: 70px;
 
-    .content {
+    .itemsContainer {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         align-items: center;
-
-        .itemsContainer {
-            display: flex;
-            max-width: 100%;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-
-        .navigationContainer {
-            display: flex;
-            flex-direction: row;
-            height: 40px;
-            padding: 50px 0;
-
-            .pagesDisplay {
-                display: flex;
-                align-items: center;
-                border: 1px solid lightgrey;
-                border-radius: 2px;
-                height: 40px;
-                padding: 0 20px;
-                margin: 0.5px;
-
-                &:hover {
-                    background-color: #1d232d;
-                    color: white;
-                    cursor: pointer
-                }
-            }
-
-            .arrowButton {
-                border: none;
-                border-radius: 2px;
-                height: 40px;
-                width: 40px;
-                background-color: #FF8E0D;
-                color: white;
-                margin: 0.5px;
-
-                &:hover {
-                    background-color: #1d232d;
-                    color: white;
-                    cursor: pointer
-                }
-            }
-
-            .active {
-                color: red;
-            }
-        }
     }
 
     .loaderContainer {

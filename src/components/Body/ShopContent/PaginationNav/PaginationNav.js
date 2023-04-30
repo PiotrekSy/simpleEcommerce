@@ -1,3 +1,4 @@
+import "./PaginationNav.scss"
 import {
     firstPageHandler,
     prevPageHandler,
@@ -5,7 +6,7 @@ import {
     lastPageHandler,
 } from '../functions.js';
 
-const PaginationNav = ({setCurrentPage, currentPage, nPage}) => {
+const PaginationNav = ({ setCurrentPage, currentPage, nPage }) => {
 
     return (
         <div className="navigationContainer" >

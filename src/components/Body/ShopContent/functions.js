@@ -37,12 +37,12 @@ export const lastPageHandler = (currentPage, setCurrentPage, nPage) => {
 export const priceConverted = (price, currency) => {
     switch (currency) {
         case "USD":
-            return price.toFixed(2) + " $";
+            return Math.ceil(price, 2).toFixed(2) + " $";
         case "Euro":
-            return price.toFixed(2) * 0.95 + " €";
+            return Math.ceil(price * 0.95, 2).toFixed(2) + " €";
         case "PLN":
-            return price.toFixed(2) * 3.9 + "PLN";
+            return Math.ceil(price * 3.9, 2).toFixed(2) + "PLN";
         default:
-            return price.toFixed(2) + " $"
+            return Math.ceil(price, 2).toFixed(2) + " $"
     }
 }

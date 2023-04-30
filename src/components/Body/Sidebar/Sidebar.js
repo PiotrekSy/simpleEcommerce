@@ -1,16 +1,39 @@
 import './Sidebar.scss'
 
-const Sidebar = () => {
+const Sidebar = ({ setCurrency, setRecordsPerPage, setDisplayType }) => {
 
     return (
         <div className="sidebarContainer">
             <div className='utilitiesContainer'>
-                <div>Utilities</div>
-                <div className="categories">
-                    <input type="checkbox" name="checkboxx1" /><label htmlFor="checkboxx1">display </label>
-                    <input type="checkbox" name="checkboxx2" /><label htmlFor="checkboxx2">display </label>
-                    <input type="checkbox" name="checkboxx3" /><label htmlFor="checkboxx3">display </label>
-                    <input type="checkbox" name="checkboxx4" /><label htmlFor="checkboxx4">display </label>
+                <div className="displayTypeInput">
+                    <label htmlFor="displayTypeInputSelect">Display type:  </label>
+                    <select name="displayTypeInputSelect"
+                        onChange={e => setDisplayType(e.target.value)}
+                        className="displayTypeInputSelect">
+                        <option value="Gallery">Gallery</option>
+                        <option value="List">List</option>
+                    </select>
+                </div>
+                <div className="displayInput">
+                    <label htmlFor="displayInputSelect">Items displayed: </label>
+                    <select name="displayInputSelect"
+                        onChange={e => setRecordsPerPage(e.target.value)}
+                        className="displayInputSelect">
+                        <option value="21">21</option>
+                        <option value="42">42</option>
+                        <option value="84">84</option>
+                        <option value="168">168</option>
+                    </select>
+                </div>
+                <div className="currencyInput">
+                    <label htmlFor="currencyInputSelect">Currency: </label>
+                    <select name="currencyInputSelect"
+                        onChange={e => setCurrency(e.target.value)}
+                        className="currencyInputSelect">
+                        <option value="USD">USD</option>
+                        <option value="Euro">Euro</option>
+                        <option value="PLN">PLN</option>
+                    </select>
                 </div>
             </div>
             <div className='filtersContainer'>

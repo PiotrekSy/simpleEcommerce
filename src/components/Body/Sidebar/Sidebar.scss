@@ -10,14 +10,50 @@
 
     .utilitiesContainer {
         padding: 10px;
-        border: 1px solid green;
         min-height: 100px;
-        
+
+        .displayTypeInput {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .displayTypeInputSelect {
+                width: 35%;
+                height: 30px;
+                margin: 5px 0;
+            }
+        }
+
+        .displayInput {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .displayInputSelect {
+                width: 35%;
+                height: 30px;
+                margin: 5px 0;
+            }
+        }
+
+        .currencyInput {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .currencyInputSelect {
+                width: 35%;
+                height: 30px;
+                margin: 5px 0;
+            }
+        }
     }
 
     .filtersContainer {
         padding: 10px;
         height: 20%;
-        border: 1px solid red;
     }
 }

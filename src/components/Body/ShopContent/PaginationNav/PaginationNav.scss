@@ -1,0 +1,43 @@
+.shopContainer {
+
+    .navigationContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 50px 0;
+
+        .pagesDisplay {
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            height: 40px;
+            padding: 0 20px;
+            margin: 0.5px;
+
+            &:hover {
+                background-color: #1d232d;
+                color: white;
+                cursor: pointer
+            }
+        }
+
+        .arrowButton {
+            border: none;
+            border-radius: 2px;
+            height: 40px;
+            width: 40px;
+            background-color: #FF8E0D;
+            color: white;
+            margin: 0.5px;
+
+            &:hover {
+                background-color: #1d232d;
+                color: white;
+                cursor: pointer
+            }
+        }
+    }
+}

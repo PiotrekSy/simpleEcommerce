@@ -5,15 +5,12 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useState, useEffect } from 'react'
 import { priceConverted } from './functions';
 
-
-const ShopContent = () => {
+const ShopContent = ({ recordsPerPage, currency }) => {
     //data:
     const [products, setProducts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [currency, setCurrency] = useState('USD');
     //pagination props + functions: 
     const [currentPage, setCurrentPage] = useState(1);
-    const [recordsPerPage, setRecordsPerPage] = useState(21);
     const records = products.products?.slice(currentPage * recordsPerPage - recordsPerPage, currentPage * recordsPerPage);
     const nPage = Math.ceil(products.products?.length / recordsPerPage);
 
@@ -32,23 +29,21 @@ const ShopContent = () => {
 
     return (
         <div className="shopContainer">
-            {isLoaded ?
-                <div className="content">
-                    <div className="itemsContainer">
-                        {records.map((item, index) =>
-                            <ShopElement key={100000 + index}
-                                title={item.title}
-                                price={priceConverted(item?.price, currency)}
-                                stock={item.stock}
-                                images={item.images}
-                                rating={item.rating}
-                                category={item.category}
-                                thumbnail={item.thumbnail}
-                                discountPercentage={item.discountPercentage} />)}
-                    </div>
-                    <PaginationNav currentPage={currentPage} setCurrentPage={setCurrentPage} nPage={nPage} />
+            {isLoaded ? <>
+                <div className="itemsContainer">
+                    {records.map((item, index) =>
+                        <ShopElement key={100000 + index}
+                            title={item.title}
+                            price={priceConverted(item?.price, currency)}
+                            stock={item.stock}
+                            images={item.images}
+                            rating={item.rating}
+                            category={item.category}
+                            thumbnail={item.thumbnail}
+                            discountPercentage={item.discountPercentage} />)}
                 </div>
-                : <div className="loaderContainer">
+                <PaginationNav currentPage={currentPage} setCurrentPage={setCurrentPage} nPage={nPage} /></> :
+                <div className="loaderContainer">
                     <CircularProgress />
                 </div>}
         </div>
