@@ -1,1 +1,52 @@
+.productCard {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 30%;
+    border: 1px solid lightgrey;
+    margin: 10px 0 ;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px 1px rgb(193, 192, 192);
 
+    .productImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 150px;
+
+        .thumbnail {
+            width: 100%;
+        }
+    }
+
+    .productDescription {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 120px;
+        padding: 10px;
+        background-color: #f4f4f4;
+
+        .pricing {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .price {
+                font-weight: 700;
+            }
+
+            .discount {
+                color: red;
+                font-weight: 500
+            }
+        }
+
+        .name {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    }
+}

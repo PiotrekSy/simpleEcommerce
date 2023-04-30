@@ -5,6 +5,6 @@ export const texts = {
     description: "Description: ",
     price: "Price: ",
     discount: "Discount: ",
-    available: "In stock: ",
+    available: " in stock",
     rating: "Rating: ",
 }

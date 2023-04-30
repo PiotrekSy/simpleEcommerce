@@ -2,11 +2,15 @@ import './ShopElement.scss';
 import LazyLoad from 'react-lazyload';
 import { texts } from './texts.js';
 
-
-const ShopElement = ({ id, images, category, thumbnail, title, price, discountPercentage, rating, stock }) => {
+const ShopElement = ({
+    stock,
+    title, price,
+    images, rating,
+    category, thumbnail,
+    discountPercentage }) => {
 
     return (
-        <div key={id} images={images} className="productCard" category={category}>
+        <div images={images} className="productCard" category={category}>
             <div className="productImage">
                 <LazyLoad height={10}>
                     <img src={thumbnail} alt={title} className="thumbnail" />
@@ -14,12 +18,12 @@ const ShopElement = ({ id, images, category, thumbnail, title, price, discountPe
             </div>
             <div className="productDescription">
                 <div className="pricing">
-                    <div className="price">{texts.price} {price}</div>
-                    <div className="discount"> {discountPercentage ? discountPercentage + '%' : null}</div>
+                    <div className="price">{price}</div>
+                    <div className="discount"> {discountPercentage ? '-' + discountPercentage + '%' : null}</div>
                 </div>
-                <div className="name">{texts.product}{title}</div>
+                <div className="name">{title}</div>
                 <div className="bottomInfo">
-                    <div>{texts.available} {stock}</div>
+                    <div>{stock}{texts.available} </div>
                     <div className="productRating">{texts.rating}{rating}</div>
                 </div>
             </div>

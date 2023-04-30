@@ -14,33 +14,6 @@
             max-width: 100%;
             flex-wrap: wrap;
             justify-content: space-evenly;
-
-            .productCard {
-                display: flex;
-                flex-direction: column;
-                min-width: 300px;
-                width: 30%;
-                border: 1px solid lightgrey;
-                margin: 10px;
-                border-radius: 10px;
-                overflow: hidden;
-
-                .productImage {
-                    // background-color: white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    overflow: hidden;
-                    height: 150px;
-
-                    .thumbnail {
-                        width: 100%;
-
-                    }
-
-
-                }
-            }
         }
 
         .navigationContainer {
@@ -51,12 +24,11 @@
 
             .pagesDisplay {
                 display: flex;
-                
                 align-items: center;
                 border: 1px solid lightgrey;
                 border-radius: 2px;
                 height: 40px;
-               padding: 0 20px;
+                padding: 0 20px;
                 margin: 0.5px;
 
                 &:hover {
@@ -74,16 +46,17 @@
                 background-color: #FF8E0D;
                 color: white;
                 margin: 0.5px;
+
                 &:hover {
                     background-color: #1d232d;
                     color: white;
                     cursor: pointer
                 }
             }
+
             .active {
                 color: red;
             }
-
         }
     }
 
@@ -92,6 +65,5 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-
     }
 }
