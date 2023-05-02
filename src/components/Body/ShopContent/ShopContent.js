@@ -5,7 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useState, useEffect } from 'react'
 import { priceConverted } from './functions';
 
-const ShopContent = ({ recordsPerPage, currency }) => {
+const ShopContent = ({ recordsPerPage, currency, displayType }) => {
     //data:
     const [products, setProducts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -30,9 +30,10 @@ const ShopContent = ({ recordsPerPage, currency }) => {
     return (
         <div className="shopContainer">
             {isLoaded ? <>
-                <div className="itemsContainer">
+                <div className='itemsContainer'>
                     {records.map((item, index) =>
                         <ShopElement key={100000 + index}
+                            displayType={displayType}
                             title={item.title}
                             price={priceConverted(item?.price, currency)}
                             stock={item.stock}

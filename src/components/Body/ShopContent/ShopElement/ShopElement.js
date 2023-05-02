@@ -7,24 +7,26 @@ const ShopElement = ({
     title, price,
     images, rating,
     category, thumbnail,
-    discountPercentage }) => {
+    discountPercentage,
+    displayType
+}) => {
 
     return (
-        <div images={images} className="productCard" category={category}>
-            <div className="productImage">
+        <div images={images} className={displayType === 'gallery' ? "productCard" : "productList"} category={category}>
+            <div className={displayType === 'gallery' ? "productImage" : "productImageList"}>
                 <LazyLoad height={10}>
-                    <img src={thumbnail} alt={title} className="thumbnail" />
+                    <img src={thumbnail} alt={title} className={displayType === 'gallery' ? "thumbnail" : "thumbnailList"} />
                 </LazyLoad>
             </div>
-            <div className="productDescription">
-                <div className="pricing">
-                    <div className="price">{price}</div>
-                    <div className="discount"> {discountPercentage ? '-' + discountPercentage + '%' : null}</div>
+            <div className={displayType === 'gallery' ? "productDescription" : "productDescriptionList"}>
+                <div className={displayType === 'gallery' ? "pricing" : "pricingList"}>
+                    <div className={displayType === 'gallery' ? "price" : "priceList"}>{price}</div>
+                    <div className={displayType === 'gallery' ? "discount" : "discountList"}> {discountPercentage ? '-' + discountPercentage + '%' : null}</div>
                 </div>
-                <div className="name">{title}</div>
-                <div className="bottomInfo">
+                <div className={displayType === 'gallery' ? "name" : "nameList"}>{title}</div>
+                <div className={displayType === 'gallery' ? "bottomInfo" : "bottomInfoList"}>
                     <div>{stock}{texts.available} </div>
-                    <div className="productRating">{texts.rating}{rating}</div>
+                    <div className={displayType === 'gallery' ? "productRating" : "productRatingList"}>{texts.rating}{rating}</div>
                 </div>
             </div>
         </div>

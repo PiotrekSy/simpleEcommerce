@@ -7,7 +7,7 @@ import { useState } from 'react'
 const Body = () => {
 
     const [currency, setCurrency] = useState('USD');
-    const [displayType, setDisplayType] = useState();
+    const [displayType, setDisplayType] = useState('gallery');
     const [recordsPerPage, setRecordsPerPage] = useState(21);
 
     return (
@@ -21,7 +21,6 @@ const Body = () => {
                     currency={currency}
                     displayType={displayType}
                     recordsPerPage={recordsPerPage} />
-
                 <Ads />
             </div>
         </div>

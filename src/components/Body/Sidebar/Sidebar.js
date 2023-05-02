@@ -10,8 +10,8 @@ const Sidebar = ({ setCurrency, setRecordsPerPage, setDisplayType }) => {
                     <select name="displayTypeInputSelect"
                         onChange={e => setDisplayType(e.target.value)}
                         className="displayTypeInputSelect">
-                        <option value="Gallery">Gallery</option>
-                        <option value="List">List</option>
+                        <option value="gallery">Gallery</option>
+                        <option value="list">List</option>
                     </select>
                 </div>
                 <div className="displayInput">
